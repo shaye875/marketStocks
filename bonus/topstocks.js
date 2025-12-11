@@ -42,3 +42,16 @@ export function topDecreasingStocks() {
     return topDec3
 }
 
+export function mostVolatileStock(){
+    let top = []
+    stockMarket.stocks.forEach((s)=>{
+        if (top.length === 0){
+            top.push(s)
+        }else{
+            if (s.previousPrices.length > top[0].previousPrices.length){
+                top = [s]
+            }
+        }
+    })
+    return top
+}
