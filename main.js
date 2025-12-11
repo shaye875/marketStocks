@@ -1,6 +1,7 @@
 import { filterStocksByPrice, searchStock } from "./utils/print.js";
 import { OperateOnStock } from "./utils/update.js";
 import readLineSync from "readline-sync"
+import { analyzeMarketTrends } from "./bonus/analiza.js";
 
 function menu() {
     let flag = true
@@ -8,6 +9,7 @@ function menu() {
         console.log("enter 1. to show stock by name or id");
         console.log("2.show all stocks above or ander ech price");
         console.log("3.buy or sell of stock");
+        console.log("4.show all stattistic of stock market");
         console.log("0.exit");
         let choich = Number(readLineSync.question())
         switch (choich) {
@@ -24,6 +26,10 @@ function menu() {
                 let operation = readLineSync.question("buy or sell: ")
                 let idName1 = readLineSync.question("enter id or name: ")
                 OperateOnStock(operation, idName1)
+                break
+            case 4:
+                console.log(analyzeMarketTrends());
+                 
                 break
             case 0:
                 flag = false
