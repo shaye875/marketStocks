@@ -2,9 +2,7 @@ import { stockMarket } from "../data/stocks.js";
 
 export function topIncreasingStocks() {
     let top = stockMarket.stocks.filter((s) => {
-        if (s.previousPrices.length >= 1) {
-            return s
-        }
+        return s
     })
     let top3 = []
     top.forEach((s) => {
@@ -23,9 +21,7 @@ export function topIncreasingStocks() {
 
 export function topDecreasingStocks() {
     let top = stockMarket.stocks.filter((s) => {
-        if (s.previousPrices.length >= 1) {
-            return s
-        }
+        return s
     })
     let topDec3 = []
     top.forEach((s) => {
@@ -55,3 +51,4 @@ export function mostVolatileStock(){
     })
     return top
 }
+
