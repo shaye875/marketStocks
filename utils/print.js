@@ -26,4 +26,18 @@ export function filterStocksByPrice(givenPrice, above){
     }
     return stocs
 }
-console.log(filterStocksByPrice("p",false));
+
+export function searchStock(identifier){
+    let stocks = []
+    stocks = stockMarket.stocks.filter((s)=>{
+        if (identifier === s.id || identifier === s.name){
+            return s
+        }
+    })
+    if (stocks.length === 0){
+    console.log("not found id or name");
+    }
+    return stocks
+}
+
+
